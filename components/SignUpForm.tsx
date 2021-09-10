@@ -11,7 +11,7 @@ interface SignUpData {
     passwordConfirm: string;
 }
 
-export default function SignUpForm() {
+export default function SignUpForm({ changeView }) {
     const { register, formState: { errors }, reset, handleSubmit } = useForm();
 
     const router = useRouter();
@@ -60,10 +60,10 @@ export default function SignUpForm() {
     };
 
     return (
-        <div className={styles.form_signup_container}>
+        <div className={styles.form_container}>
             <h2>Cadastrar</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-            <div className={styles.input_group}>
+            <div className={styles.fields}>
                 <label htmlFor='name'>Nome</label>
                 <input 
                     type='text' 
@@ -79,6 +79,8 @@ export default function SignUpForm() {
                     {errors.name.message}
                     </div>
                 )}
+            </div>
+            <div className={styles.fields}>
                 <label htmlFor='email'>Email</label>
                 <input 
                     type='text' 
@@ -99,7 +101,7 @@ export default function SignUpForm() {
                     </div>
                 )}
             </div>
-            <div className={styles.input_group}>
+            <div className={styles.fields}>
                 <label htmlFor='password'>Senha</label>
                 <input 
                     type='password' 
@@ -120,7 +122,7 @@ export default function SignUpForm() {
                     </div>
                 )}
             </div>
-            <div className={styles.input_group}>
+            <div className={styles.fields}>
                 <label htmlFor='confirmPassword'>Confirmar Senha</label>
                 <input 
                     type='password' 
@@ -141,8 +143,10 @@ export default function SignUpForm() {
                     </div>
                 )}
             </div>
-            <button type='submit' className={styles.button_enter}>Cadastrar</button>
-            <Link href='/' >Entrar</Link>
+            <div className={styles.buttons}>
+                <button type='submit' id={styles.call_to_action}>Cadastrar</button>
+                <button type='button' onClick={changeView} id={styles.change_button}>Entrar</button>
+            </div>
             </form> 
         </div>
     )

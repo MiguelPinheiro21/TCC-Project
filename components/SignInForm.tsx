@@ -9,7 +9,7 @@ interface SignUpData {
     password: string;
 }
 
-export default function SignInForm() {
+export default function SignInForm({ changeView }) {
     
     const router = useRouter();
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -38,7 +38,7 @@ export default function SignInForm() {
         <div className={styles.form_container}>
             <h2>Entrar</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className={styles.input_group}>
+                <div className={styles.fields}>
                 <label htmlFor='email'>Email</label>
                 <input 
                     type='text' 
@@ -59,7 +59,7 @@ export default function SignInForm() {
                     </div>
                 )}
                 </div>
-                <div className={styles.input_group}>
+                <div className={`${styles.fields} ${styles.signin_pass}`}>
                 <label htmlFor='password'>Senha</label>
                 <input 
                     type='password' 
@@ -76,8 +76,10 @@ export default function SignInForm() {
                     </div>
                 )}
                 </div>
-                <button type='submit' className={styles.button_enter} >Entrar</button>
-                <Link href='/signup'>Cadastre-se</Link>
+                <div className={styles.buttons}>
+                    <button type='submit' id={styles.call_to_action}>Entrar</button>
+                    <button type='button' onClick={changeView} id={styles.change_button}>Cadastre-se</button>
+                </div>
             </form>
         </div>
     )

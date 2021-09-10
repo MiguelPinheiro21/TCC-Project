@@ -10,7 +10,6 @@ import Nav from '../components/Nav';
 import styles from '../styles/Home.module.css';
 import GridIncomesExpenses from '../components/GridIncomesExpenses';
 import { useRouter } from 'next/dist/client/router';
-import { route } from 'next/dist/next-server/server/router';
 
 
 const monthNames = [

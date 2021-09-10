@@ -2,6 +2,7 @@ import styles from '../styles/Nav.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
+
 export default function Nav() {
     return(
         <div className={styles.grid_item}>
@@ -11,7 +12,7 @@ export default function Nav() {
                         <Link href='/home'>
                             <div>
                                 <Image src='/homeIcon.svg' width={30} height={30} /> 
-                                <p>Dashboard</p>
+                                {/* <p>Dashboard</p> */}
                             </div>
                         </Link>
                     </li>
@@ -19,7 +20,7 @@ export default function Nav() {
                         <Link href='/incomes'>
                             <div>
                                 <Image src='/incomeIcon.svg' width={40} height={40} />
-                                <p>Receitas</p>
+                                {/* <p>Receitas</p> */}
                             </div>
                         </Link>
                     </li>
@@ -27,7 +28,7 @@ export default function Nav() {
                         <Link href='expenses'>
                             <div>
                                 <Image src='/expenseIcon.svg' width={40} height={40} />
-                                <p>Despesas</p>
+                                {/* <p>Despesas</p> */}
                             </div>
                         </Link>
                     </li>
