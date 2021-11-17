@@ -1,0 +1,208 @@
+.table_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    min-width: 48%;
+    min-height: 60vh;
+    border-radius: 1rem;
+}
+
+.incomes_expenses_table{
+    width: 95%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.main_header{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.incomes_expenses_table thead tr th{
+    font-size: 1.3rem;
+}
+
+.incomes_expenses_table :is(th,tr,td){
+    text-align: center;
+    border: 1px solid black;
+    width: auto;
+    padding: .5rem 0;
+}
+
+.table_body{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.table_body tr:nth-of-type(odd){
+    background-color: #F2F2F2;
+}
+
+.table_body tr:nth-child(odd) td:first-child{
+    background-color: #D9D9D9;
+}
+
+#delete_button{
+    border: none;
+    background: none;
+}
+
+#delete_button svg:hover{
+    cursor: pointer;
+}
+
+#delete_button svg{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.show{
+    display: table-cell;
+}
+
+.no_show{
+    display: none;
+}
+
+#no_data{
+    height: 25rem;
+    color: grey;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.add_button{
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 7px 27px 7px 14px;
+    font-weight: 800;
+    font-size: 16px;
+    border-radius: 1rem;
+    border: 1px solid black;
+    flex-direction: row;
+    align-items: center;
+}
+
+.add_button:hover{
+    color: aqua;
+    cursor: pointer;
+    box-shadow: 0 0 5px;
+    border: 1px solid;
+}
+
+.add_button svg{
+    height: 2rem;
+    width: 2rem;
+}
+
+/* Modal */
+.darken{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 50%;
+}
+
+.modal{
+    display: flex;
+    background-color: white;
+    border-radius: 3rem;
+    position: absolute;
+    width: 60rem;
+    height: 50rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+}
+
+.modal button{
+    display: flex;
+    height: 3.5rem;
+    align-self: flex-end;
+    background: none;
+    font-size: 2rem;
+    border: none;
+    border-radius: 1rem;
+    align-items: center;
+}
+
+.income_expense_form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    max-width: 90%;
+    margin-left: 3rem;
+    height: 80%;
+    justify-content: space-between;
+}
+
+.form_input{
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form_input label{
+    font-size: 1.8rem;
+    font-weight: 600;
+    height: fit-content;
+}
+
+.form_input input{
+    height: 2rem;
+    margin-bottom: .5rem;
+    border: none;
+    font-size: 1.3rem;
+    border-bottom: 1px solid black;
+}
+
+.form_input input:focus{
+    border-bottom: 1px solid aqua;
+}
+
+.form_input input:focus-visible{
+    outline: none;
+}
+
+.close_button{
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+.close_button:hover{
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button{
+    width: fit-content;
+    border: 1px solid black;
+    padding: 1rem 2rem;
+}
+
+.buttons button:hover{
+    color: aqua;
+    border: 1px solid aqua;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px aqua;
+}
+
+.error_message {
+    color: red;
+    font-weight: 600;
+}

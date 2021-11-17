@@ -1,11 +1,12 @@
-import Nav from '../components/Nav'
+import { useState } from 'react';
+import GridIncomesExpenses from '../components/GridIncomesExpenses';
+import styles from '../styles/IncomesExpenses.module.css';
 
-export default function incomes(){
+export default function expenses({isExpenseLoading,expenses,onSubmitExpense,handleDeleteExpenses}){
 
     return (
-        <>
-            <Nav />
-            <p>hi there, you are in the expenses page</p>
-        </>
+        <div className={styles.single_table}>
+            <GridIncomesExpenses showButton={true} showDetails={true} isIncomeExpenseLoading={isExpenseLoading} tableName='Despesas' incomesExpenses={expenses} onSubmit={onSubmitExpense} handleDelete={handleDeleteExpenses}/>
+        </div>
     )
 }

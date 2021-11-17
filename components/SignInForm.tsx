@@ -1,6 +1,5 @@
 import { useForm } from 'react-hook-form';
 import { auth} from '../config/firebase';
-import Link from 'next/link';
 import styles from '../styles/SignInSignUp.module.css';
 import { useRouter } from 'next/dist/client/router';
 
@@ -10,15 +9,13 @@ interface SignUpData {
 }
 
 export default function SignInForm({ changeView }) {
-    
+
     const router = useRouter();
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = (data: SignUpData) => {
 
         auth.signInWithEmailAndPassword(data.email,data.password)
-        .then((userCredential) => {
-            let user = userCredential.user;
-            // console.log(user)
+        .then(() => {
             router.push('/home')
           })
         .catch((error) => {
@@ -67,7 +64,7 @@ export default function SignInForm({ changeView }) {
                     name='password' 
                     placeholder='********'
                     {...register('password',{
-                    required: 'Por favor digite a senha.',
+                    required: 'Por favor, digite a senha.',
                 })}
                 />
                 {errors.password && (

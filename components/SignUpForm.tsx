@@ -61,7 +61,7 @@ export default function SignUpForm({ changeView }) {
 
     return (
         <div className={styles.form_container}>
-            <h2>Cadastrar</h2>
+            <h2>Cadastre-se</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.fields}>
                 <label htmlFor='name'>Nome</label>
@@ -109,7 +109,7 @@ export default function SignUpForm({ changeView }) {
                     name='password' 
                     placeholder='digite sua senha'
                     {...register('password',{
-                        required: 'Por favor digite uma senha.',
+                        required: 'Por favor, digite uma senha.',
                         minLength: {
                             value: 6,
                             message: 'A senha deve ter no mínimo 6 caracteres.',
@@ -130,7 +130,7 @@ export default function SignUpForm({ changeView }) {
                     name='confirmPassword' 
                     placeholder='confirme sua senha'  
                     {...register('passwordConfirm',{
-                        required: 'Por favor digite uma senha.',
+                        required: 'Por favor, digite a mesma senha.',
                         minLength: {
                             value: 6,
                             message: 'A senha deve ter no mínimo 6 caracteres.',

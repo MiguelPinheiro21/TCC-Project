@@ -4,18 +4,18 @@ import SignInForm from "../components/SignInForm"
 import SignUpForm from "../components/SignUpForm";
 import styles from '../styles/SignInSignUp.module.css';
 
-export default function SignIn() {
+export default function SignInSignUp() {
 
   const [signIn,setSignIn] = useState(true);
 
   const changeView = () => setSignIn(!signIn)
 
-  const signInSignUp = () => {
+  const signInSignUpForm = () => {
     if (signIn){
       return (
         <>
           <SignInForm changeView={changeView}/>
-          <ShowCase name = 'sign in'/>
+          <ShowCase name='sign in'/>
         </>
       )
     }
@@ -29,7 +29,7 @@ export default function SignIn() {
 
   return (
     <div className={styles.container}>
-      {signInSignUp()}
+      {signInSignUpForm()}
     </div>
   )
 }
