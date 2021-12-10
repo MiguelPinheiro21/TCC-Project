@@ -63,5 +63,5 @@ const MainPanel = ({ totalIncome, totalExpense, month, year, setMonth, setYear }
         </div>
      );
 }
- 
+
 export default MainPanel;
